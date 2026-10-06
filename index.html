@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ThoughtPilot Content Agent: your voice, your proof, zero AI slop</title>
-  <meta name="description" content="ThoughtPilot's content agent writes LinkedIn, X and YouTube content that sounds like you, cites every number, and has to pass a panel of critics before you see it.">
+  <title>ThoughtPilot: post like yourself every week, without writing</title>
+  <meta name="description" content="Done-for-you LinkedIn, X and YouTube content in your own voice. Every draft is built from your real stories and checked by a panel of critics. Book a free voice audit: 3 drafts in your voice in 20 minutes.">
   <link rel="canonical" href="https://REPLACE_ME/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="ThoughtPilot Content Agent">
-  <meta property="og:description" content="Content that sounds like you, cites every number, and survives a critic panel before you see it.">
+  <meta property="og:description" content="Post like yourself. Every week. Without writing. Book a free voice audit.">
   <meta property="og:image" content="assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#e6e4ee">
@@ -20,10 +20,23 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="offer-strip">
+    <div class="container offer-inner">
+      <span class="offer-tag">Free</span>
+      <span>Voice audit: 3 drafts in your voice</span>
+      <a data-cta="book" href="#book">Book</a>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="#hero" aria-label="ThoughtPilot home"><img src="assets/wordmark.svg" alt="ThoughtPilot" width="148" height="28"></a>
-      <a class="btn btn-primary btn-sm" data-cta="book" href="#book">Book a call</a>
+      <a class="wordmark" href="#hero" aria-label="ThoughtPilot home"><img src="assets/wordmark.svg" alt="ThoughtPilot" width="150" height="24"></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#how">How it works</a>
+        <a href="#outputs">What you get</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" data-cta="book" href="#book">Free voice audit</a>
     </div>
   </header>
 
@@ -31,38 +44,102 @@
     <section id="hero" class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">ThoughtPilot Content Agent</p>
-          <h1>Your voice. Your proof. Zero AI slop.</h1>
-          <p class="lede">Our content agent writes LinkedIn, X and YouTube content that sounds like you, cites every number, and has to get past a panel of critics before you ever see it.</p>
+          <p class="eyebrow">Done-for-you LinkedIn, X and YouTube content</p>
+          <h1>Post like yourself. Every week. <span class="h1-accent">Without writing.</span></h1>
+          <p class="lede">Our content agent learns your voice from your own posts, writes from your real stories and numbers, and runs every draft past a panel of critics before you see it. You approve. It reads like you wrote it.</p>
           <div class="hero-ctas">
-            <a class="btn btn-primary" data-cta="book" href="#book">Book a call</a>
-            <a class="btn btn-ghost" href="#how">See how it works</a>
+            <a class="btn btn-primary btn-lg" data-cta="book" href="#book">Book my free voice audit</a>
+            <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
           </div>
+          <p class="microcopy">20 min · no pitch deck · 3 drafts you keep</p>
+          <ul class="platforms">
+            <li>LinkedIn</li><li>X</li><li>YouTube</li>
+          </ul>
         </div>
-        <figure class="gate-card" aria-label="Example of the checks every draft passes">
-          <figcaption class="gate-card-title"><span class="dot" aria-hidden="true"></span>draft_0142 · LinkedIn post</figcaption>
-          <pre class="gate-lines"><span data-gate-line class="pass">PASS [voice]    voice match 100/100</span>
-<span data-gate-line class="pass">PASS [source]   4 claim(s) verified</span>
-<span data-gate-line class="pass">PASS [cooldown] no repeat in 45 days</span>
-<span data-gate-line class="pass">PASS [critics]  voice · hook · substance</span></pre>
+
+        <section class="console" data-console-demo data-stage="done" aria-label="Animated example of the agent turning an idea into a post">
+          <div class="console-bar">
+            <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="console-title">content-agent · live run</span>
+            <span class="console-stage" aria-hidden="true"></span>
+          </div>
+          <div class="console-body">
+            <p class="label">Idea</p>
+            <p class="cd-idea"><span data-cd-idea>Founders post tactics. Buyers remember the story behind them.</span><span class="caret" aria-hidden="true"></span></p>
+
+            <ol class="cd-steps">
+              <li data-cd-step class="is-lit">Learn</li>
+              <li data-cd-step class="is-lit">Codify</li>
+              <li data-cd-step class="is-lit">Write</li>
+              <li data-cd-step class="is-lit">Challenge</li>
+              <li data-cd-step class="is-lit">Ship</li>
+            </ol>
+
+            <ul class="cd-checks">
+              <li data-cd-check class="is-pass"><span>voice</span><b data-cd-state>PASS</b></li>
+              <li data-cd-check class="is-pass"><span>sources</span><b data-cd-state>PASS</b></li>
+              <li data-cd-check class="is-pass"><span>hook</span><b data-cd-state>PASS</b></li>
+              <li data-cd-check class="is-pass"><span>no repeat</span><b data-cd-state>PASS</b></li>
+            </ul>
+
+            <article class="cd-post">
+              <header class="cd-post-head">
+                <span class="avatar" aria-hidden="true">YN</span>
+                <span><b>Your Name</b><small>Founder · just now</small></span>
+              </header>
+              <p data-cd-line class="is-shown">Last quarter we lost a deal we should have won.</p>
+              <p data-cd-line class="is-shown">The buyer told us why: "We never got a feel for how you think."</p>
+              <p data-cd-line class="is-shown">We had posted all quarter. All tips. No stories.</p>
+              <p data-cd-line class="is-shown">So we changed one rule for every post:</p>
+              <p data-cd-line class="is-shown">Start with something that actually happened.</p>
+              <p data-cd-line class="is-shown">What's a moment from your week worth telling?</p>
+            </article>
+
+            <div class="cd-score">
+              <span class="label">Voice match</span>
+              <span class="cd-bar"><span data-cd-score></span></span>
+              <b data-cd-score-num>100</b>
+            </div>
+          </div>
           <p class="illustrative">Illustrative example</p>
-        </figure>
+        </section>
+      </div>
+    </section>
+
+    <section id="proofbar" class="proofbar">
+      <div class="container">
+        <ul class="stats">
+          <li><b data-count-to="5">5</b><span>checks on every draft</span></li>
+          <li><b data-count-to="45" data-suffix=" days">45 days</b><span>before any hook can repeat</span></li>
+          <li><b data-count-to="4">4</b><span>formats from one voice</span></li>
+          <li><b data-count-to="3">3</b><span>free drafts on your audit</span></li>
+        </ul>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>LinkedIn posts</span><span>Carousels</span><span>Infographic briefs</span><span>X threads</span><span>X articles</span><span>YouTube scripts</span><span>Shorts</span><span>Article covers</span>
+          <span>LinkedIn posts</span><span>Carousels</span><span>Infographic briefs</span><span>X threads</span><span>X articles</span><span>YouTube scripts</span><span>Shorts</span><span>Article covers</span>
+        </div>
       </div>
     </section>
 
     <section id="problem" class="section">
       <div class="container">
+        <p class="eyebrow" data-reveal>The problem</p>
         <h2 data-reveal>Posting as yourself is hard to outsource.</h2>
         <div class="cards three">
-          <article class="card" data-reveal>
+          <article class="card pain" data-reveal>
+            <span class="pain-num">01</span>
             <h3>Ghostwriters don't know your story.</h3>
-            <p>They write what sounds good, then you spend an hour rewriting it so it sounds like you.</p>
+            <p>They write what sounds good. You end up rewriting every draft so it sounds like you.</p>
           </article>
-          <article class="card" data-reveal>
+          <article class="card pain" data-reveal>
+            <span class="pain-num">02</span>
             <h3>AI posts all sound the same.</h3>
-            <p>Your buyers scroll past the same hooks, the same structures and the same tired phrases every day.</p>
+            <p>Same hooks, same structures, same tired phrases. Your buyers scroll past in a second.</p>
           </article>
-          <article class="card" data-reveal>
+          <article class="card pain" data-reveal>
+            <span class="pain-num">03</span>
             <h3>One invented number costs you credibility.</h3>
             <p>A made-up stat under your name is worse than not posting at all.</p>
           </article>
@@ -70,41 +147,139 @@
       </div>
     </section>
 
-    <section id="how" class="section section-alt">
+    <section id="compare" class="section section-alt">
       <div class="container">
-        <h2 data-reveal>How the content agent works</h2>
-        <p class="section-lede" data-reveal>Five steps, run for every client, every draft.</p>
-        <div class="meter pipeline-diagram" role="img" aria-label="Pipeline progress: Learn, Codify, Write, Challenge, Ship and learn">
-          <span class="seg pipe-node" data-step="1"></span><span class="seg pipe-node" data-step="2"></span><span class="seg pipe-node" data-step="3"></span><span class="seg pipe-node" data-step="4"></span><span class="seg pipe-node" data-step="5"></span>
+        <p class="eyebrow" data-reveal>See the difference</p>
+        <h2 data-reveal>Same idea. Two drafts.</h2>
+        <p class="section-lede" data-reveal>Left: what a generic AI tool writes. Right: the same idea through the content agent, built from a real moment.</p>
+        <div class="ba">
+          <article class="ba-card ba-before" data-reveal>
+            <p class="ba-tag">Typical AI draft</p>
+            <p><mark class="tell">In today's fast-paced digital landscape</mark>, consistency matters more than ever. <mark class="tell">🚀</mark></p>
+            <p>Here are <mark class="tell">5 powerful tips</mark> to take your LinkedIn <mark class="tell">to the next level</mark>:</p>
+            <p>1. Post every day<br>2. Use strong hooks<br>3. Add value<br>4. Engage with others<br>5. Be authentic</p>
+            <p><mark class="tell">What do you think? Let me know in the comments! 👇</mark></p>
+            <p class="ba-verdict">Generic opener, listicle, no story, no proof.</p>
+          </article>
+          <span class="ba-vs" aria-hidden="true">vs</span>
+          <article class="ba-card ba-after" data-reveal>
+            <p class="ba-tag">Through the content agent</p>
+            <p><mark class="real">Last quarter we lost a deal we should have won.</mark></p>
+            <p><mark class="real">The buyer told us why: "We never got a feel for how you think."</mark></p>
+            <p>We had posted all quarter. All tips. No stories.</p>
+            <p>So we changed one rule: every post starts with something that actually happened that week.</p>
+            <p>What's a moment from your week worth telling?</p>
+            <p class="ba-verdict">Real moment first, your words, a question worth answering.</p>
+          </article>
         </div>
-        <ol class="meter-labels" aria-hidden="true"><li>Learn</li><li>Codify</li><li>Write</li><li>Challenge</li><li>Ship</li></ol>
-        <ol class="pipeline">
-          <li data-step="1" data-reveal><h3>Learn</h3><p>We collect your posts, video transcripts and website, so the agent starts from what you have actually said.</p></li>
-          <li data-step="2" data-reveal><h3>Codify</h3><p>Your voice is measured into a voiceprint and written into "law" files: identity, voice, receipts, quality bar and content plan.</p></li>
-          <li data-step="3" data-reveal><h3>Write</h3><p>Drafts are built only from your real stories, numbers and frameworks, in structures proven on your own account.</p></li>
-          <li data-step="4" data-reveal><h3>Challenge</h3><p>Linters, then independent critics for voice, hook and substance, then an editor-in-chief. One veto sends it back.</p></li>
-          <li data-step="5" data-reveal><h3>Ship and learn</h3><p>You approve every post. Your edits are recorded and tune your voice for the next draft.</p></li>
-        </ol>
+        <p class="illustrative">Illustrative example</p>
       </div>
     </section>
 
-    <section id="why" class="section">
+    <section id="how" class="section pipe" data-scroll-pipeline>
       <div class="container">
-        <h2 data-reveal>Six reasons it reads like you wrote it</h2>
-        <div class="lattice">
-          <article class="card" data-reveal><h3>Voice cloned from your data</h3><p>Sentence rhythm, vocabulary and register are measured from your own posts. Every draft is scored against them.</p><p class="evidence">voice match scored on every draft</p></article>
-          <article class="card" data-reveal><h3>No receipt, no ship</h3><p>Every number in a draft must trace to a source. If it can't be sourced, it comes out.</p><p class="evidence">source gate: claims verified or removed</p></article>
-          <article class="card" data-reveal><h3>An adversarial critic panel</h3><p>Separate critics read each draft trying to break it. A single veto sends it back for a rewrite.</p><p class="evidence">voice · hook · substance · editor</p></article>
-          <article class="card" data-reveal><h3>Anti-AI-slop linters</h3><p>The phrasing that makes posts read as machine-written is caught automatically, before any human reads the draft.</p><p class="evidence">banned patterns blocked in code</p></article>
-          <article class="card" data-reveal><h3>Never repeats itself</h3><p>Hooks, topics and even the shape of a post go on a cooldown, so your feed stays fresh.</p><p class="evidence">45-day cooldown on hooks and structure</p></article>
-          <article class="card" data-reveal><h3>Watches your peers</h3><p>The agent tracks the accounts you compete with for attention and learns which formats and topics are working now.</p><p class="evidence">peer accounts tracked</p></article>
+        <p class="eyebrow" data-reveal>How it works</p>
+        <h2 data-reveal>Five steps behind every post.</h2>
+        <p class="section-lede" data-reveal>The same pipeline runs for every client and every draft. Scroll through it.</p>
+        <div class="pipe-wrap">
+          <div class="pipe-rail" aria-hidden="true"><span></span></div>
+          <ol class="pipe-list">
+            <li class="pipe-row" data-pipe-step>
+              <div class="pipe-text">
+                <span class="pipe-num">01</span>
+                <h3>Learn</h3>
+                <p>We collect your posts, video transcripts and website, so the agent starts from what you have actually said.</p>
+              </div>
+              <div class="pipe-visual" data-pipe-visual aria-hidden="true">
+                <p class="label">Sources</p>
+                <ul class="vis-sources">
+                  <li><span>Your posts</span><i></i></li>
+                  <li><span>Video transcripts</span><i></i></li>
+                  <li><span>Website</span><i></i></li>
+                  <li><span>Onboarding notes</span><i></i></li>
+                </ul>
+              </div>
+            </li>
+            <li class="pipe-row" data-pipe-step>
+              <div class="pipe-text">
+                <span class="pipe-num">02</span>
+                <h3>Codify</h3>
+                <p>Your voice is measured into a voiceprint and written into rules: who you are, how you sound, the stories you can tell and the lines you never cross.</p>
+              </div>
+              <div class="pipe-visual" data-pipe-visual aria-hidden="true">
+                <p class="label">Voiceprint</p>
+                <ul class="vis-bars">
+                  <li><span>Sentence length</span><i></i></li>
+                  <li><span>I vs we</span><i></i></li>
+                  <li><span>Numbers per post</span><i></i></li>
+                  <li><span>Story openers</span><i></i></li>
+                </ul>
+              </div>
+            </li>
+            <li class="pipe-row" data-pipe-step>
+              <div class="pipe-text">
+                <span class="pipe-num">03</span>
+                <h3>Write</h3>
+                <p>Drafts are built only from your real stories, numbers and frameworks, in structures already proven on your account.</p>
+              </div>
+              <div class="pipe-visual" data-pipe-visual aria-hidden="true">
+                <p class="label">Receipts used</p>
+                <ul class="vis-receipts">
+                  <li><b>R12</b> client story · sourced</li>
+                  <li><b>R04</b> your framework · sourced</li>
+                  <li><b>R31</b> number from your post · sourced</li>
+                </ul>
+              </div>
+            </li>
+            <li class="pipe-row" data-pipe-step>
+              <div class="pipe-text">
+                <span class="pipe-num">04</span>
+                <h3>Challenge</h3>
+                <p>Linters, then independent critics for voice, hook and substance, then an editor-in-chief. One veto sends it back for a rewrite.</p>
+              </div>
+              <div class="pipe-visual" data-pipe-visual aria-hidden="true">
+                <p class="label">Critic panel</p>
+                <ul class="vis-critics">
+                  <li><span>Voice</span><b class="chip pass">PASS</b></li>
+                  <li><span>Hook</span><b class="chip warn">REWRITE</b><b class="chip pass">PASS</b></li>
+                  <li><span>Substance</span><b class="chip pass">PASS</b></li>
+                  <li><span>Editor</span><b class="chip pass">PASS</b></li>
+                </ul>
+              </div>
+            </li>
+            <li class="pipe-row" data-pipe-step>
+              <div class="pipe-text">
+                <span class="pipe-num">05</span>
+                <h3>Ship and learn</h3>
+                <p>You approve every post. Your edits are recorded and tune your voice, and every hook goes on a 45-day cooldown so your feed stays fresh.</p>
+              </div>
+              <div class="pipe-visual" data-pipe-visual aria-hidden="true">
+                <p class="label">45-day cooldown</p>
+                <div class="vis-cal"><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="inline-cta" data-reveal>
+          <p>Want to see it run on your posts?</p>
+          <a class="btn btn-primary" data-cta="book" href="#book">Book my free voice audit</a>
         </div>
       </div>
     </section>
 
-    <section id="outputs" class="section section-alt">
+    <section id="results" class="section section-alt" hidden>
       <div class="container">
-        <h2 data-reveal>What you get</h2>
+        <p class="eyebrow">Results</p>
+        <h2>What changes when the agent runs.</h2>
+        <div id="results-list" class="results-grid"></div>
+        <p class="fineprint">Anonymised client results.</p>
+      </div>
+    </section>
+
+    <section id="outputs" class="section">
+      <div class="container">
+        <p class="eyebrow" data-reveal>What you get</p>
+        <h2 data-reveal>One voice. Every format.</h2>
         <div class="tabs" data-reveal>
           <div role="tablist" aria-label="Content formats">
             <button type="button" role="tab" id="tab-li" aria-controls="panel-li" aria-selected="true">LinkedIn</button>
@@ -113,70 +288,81 @@
             <button type="button" role="tab" id="tab-vis" aria-controls="panel-vis" aria-selected="false" tabindex="-1">Visuals</button>
           </div>
           <div role="tabpanel" id="panel-li" aria-labelledby="tab-li">
-            <h3>LinkedIn posts, carousels and infographic briefs</h3>
-            <p>Framework posts, stories and opinion pieces in your structures, each with a visual brief when the idea deserves one.</p>
-            <blockquote class="sample"><p>Founder: "We post every day and nothing happens."<br>Me: "Start from your three best client conversations:"</p></blockquote>
+            <div class="out-grid">
+              <div><h3>LinkedIn posts, carousels and infographic briefs</h3><p>Framework posts, stories and opinion pieces in your structures, each with a visual brief when the idea deserves one.</p></div>
+              <div class="mock mock-li">
+                <div class="mock-head"><span class="avatar">YN</span><span><b>Your Name</b><small>Founder · 2h</small></span></div>
+                <p>Founder: "We post every day and nothing happens."</p>
+                <p>Me: "Start from your three best client conversations:"</p>
+                <div class="mock-img"><span>Framework</span><i></i><i></i><i></i></div>
+                <div class="mock-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
+              </div>
+            </div>
             <p class="illustrative">Illustrative example</p>
           </div>
           <div role="tabpanel" id="panel-x" aria-labelledby="tab-x">
-            <h3>X tweets, threads and articles</h3>
-            <p>Short posts, threads and long-form articles cut for how X distributes, with the hook written first and checked last.</p>
-            <blockquote class="sample"><p>We stopped writing "content".<br>We started writing down what customers asked us on calls.<br>Now every post starts from a real question.</p></blockquote>
+            <div class="out-grid">
+              <div><h3>X tweets, threads and articles</h3><p>Short posts, threads and long-form articles cut for how X distributes, with the hook written first and checked last.</p></div>
+              <div class="mock mock-x">
+                <div class="mock-head"><span class="avatar">YN</span><span><b>Your Name</b><small>@you · 1h</small></span></div>
+                <p>We stopped writing "content".</p>
+                <p>We started writing down what customers asked us on calls.</p>
+                <p>Now every post starts from a real question.</p>
+                <div class="mock-foot"><span>Reply</span><span>Repost</span><span>Like</span><span>Save</span></div>
+              </div>
+            </div>
             <p class="illustrative">Illustrative example</p>
           </div>
           <div role="tabpanel" id="panel-yt" aria-labelledby="tab-yt">
-            <h3>YouTube scripts, long-form and Shorts</h3>
-            <p>Scripts built from your own transcripts: how you open, how you move between sections, how you close.</p>
-            <blockquote class="sample"><p>"In this video, I'll show you the three-step system we use to plan a month of content in one afternoon."</p></blockquote>
+            <div class="out-grid">
+              <div><h3>YouTube scripts, long-form and Shorts</h3><p>Scripts built from your own transcripts: how you open, how you move between sections, how you close.</p></div>
+              <div class="mock mock-yt">
+                <p class="label">Script · 00:00 cold open</p>
+                <p>"In this video, I'll show you the three-step system we use to plan a month of content in one afternoon."</p>
+                <p class="label">00:40 part one</p>
+                <p>"Step one: start from the questions customers ask on calls."</p>
+              </div>
+            </div>
             <p class="illustrative">Illustrative example</p>
           </div>
           <div role="tabpanel" id="panel-vis" aria-labelledby="tab-vis">
-            <h3>Infographics and article covers</h3>
-            <p>Visual briefs and covers that turn a framework into something people save, using only numbers that passed the source check.</p>
-            <blockquote class="sample"><p>Cover concept: one hero object, a five-word title, your brand colour.</p></blockquote>
+            <div class="out-grid">
+              <div><h3>Infographics and article covers</h3><p>Visual briefs and covers that turn a framework into something people save, using only numbers that passed the source check.</p></div>
+              <div class="mock mock-stack" aria-hidden="true"><i></i><i></i><i><b>The one-step free product</b><span>NOW → step → IDEAL</span></i></div>
+            </div>
             <p class="illustrative">Illustrative example</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="inside" class="section">
-      <div class="container inside-grid">
-        <div>
-          <h2 data-reveal>Inside a draft</h2>
-          <p class="section-lede" data-reveal>Every draft ships with the checks it passed. You see the proof, not just the post.</p>
-          <article class="post-mock" data-reveal>
-            <p><mark data-callout="1">I've reviewed 40 content plans this quarter.</mark></p>
-            <p>The ones that worked had one thing in common:</p>
-            <p>- They started from customer questions;<br>- They repeated a few topics on purpose;<br>- <mark data-callout="2">They never shipped a number they couldn't source.</mark></p>
-            <p>Which question do your customers ask most?</p>
-            <p class="illustrative">Illustrative example</p>
-          </article>
+    <section id="why" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Why it works</p>
+        <h2 data-reveal>Six reasons it reads like you wrote it.</h2>
+        <div class="lattice">
+          <article data-reveal><h3>Voice cloned from your data</h3><p>Sentence rhythm, vocabulary and register are measured from your own posts. Every draft is scored against them.</p><p class="evidence">voice match scored on every draft</p></article>
+          <article data-reveal><h3>No receipt, no ship</h3><p>Every number in a draft must trace to a source. If it can't be sourced, it comes out.</p><p class="evidence">source gate: claims verified or removed</p></article>
+          <article data-reveal><h3>An adversarial critic panel</h3><p>Separate critics read each draft trying to break it. A single veto sends it back for a rewrite.</p><p class="evidence">voice · hook · substance · editor</p></article>
+          <article data-reveal><h3>Anti-AI-slop linters</h3><p>The phrasing that makes posts read as machine-written is caught automatically, before any human reads the draft.</p><p class="evidence">banned patterns blocked in code</p></article>
+          <article data-reveal><h3>Never repeats itself</h3><p>Hooks, topics and even the shape of a post go on a cooldown, so your feed stays fresh.</p><p class="evidence">45-day cooldown on hooks and structure</p></article>
+          <article data-reveal><h3>Watches your peers</h3><p>The agent tracks the accounts you compete with for attention and learns which formats and topics are working now.</p><p class="evidence">peer accounts tracked</p></article>
         </div>
-        <figure class="gate-card" data-reveal aria-label="Gate report for the example draft">
-          <figcaption class="gate-card-title"><span class="dot" aria-hidden="true"></span>gate report</figcaption>
-          <pre class="gate-lines"><span data-gate-line class="pass">PASS [freshness] source data current</span>
-<span data-gate-line class="pass">PASS [voice]     voice match 100/100</span>
-<span data-gate-line class="pass">PASS [source]    4 claim(s) verified</span>
-<span data-gate-line class="pass">PASS [cooldown]  no repeat in 45 days</span>
-<span data-gate-line class="pass">PASS [critics]   voice · hook · substance</span></pre>
-          <ol class="callouts">
-            <li><span class="callout-num">1</span> The number in the hook was traced to a source before the draft reached you.</li>
-            <li><span class="callout-num">2</span> The voice critic checked this line against your real posts.</li>
-          </ol>
-          <p class="illustrative">Illustrative example</p>
-        </figure>
       </div>
     </section>
 
-    <section id="onboarding" class="section section-alt">
-      <div class="container">
-        <h2 data-reveal>Your first two weeks</h2>
-        <ol class="timeline">
-          <li data-reveal><span class="tl-step">Kickoff call</span><p>We learn your goals, your audience and what you will never say.</p></li>
-          <li data-reveal><span class="tl-step">Knowledge base</span><p>We build your voiceprint and law files from your own posts, videos and site.</p></li>
-          <li data-reveal><span class="tl-step">First drafts</span><p>You review drafts that have already passed every check, and tell us what to change.</p></li>
-          <li data-reveal><span class="tl-step">Weekly rhythm</span><p>A steady flow of approved posts, with your edits feeding back into the voice.</p></li>
+    <section id="audit" class="section audit">
+      <div class="container audit-grid">
+        <div>
+          <p class="eyebrow" data-reveal>The offer</p>
+          <h2 data-reveal>Your free voice audit.</h2>
+          <p class="section-lede" data-reveal>See the agent work on your own posts before you decide anything. No obligation.</p>
+          <a class="btn btn-primary btn-lg" data-cta="book" href="#book">Book my free voice audit</a>
+        </div>
+        <ol class="audit-steps" data-reveal>
+          <li><span class="pipe-num">01</span><div><h3>Pick a time</h3><p>Choose a 20-minute slot and share your LinkedIn or X profile.</p></div></li>
+          <li><span class="pipe-num">02</span><div><h3>We run the agent on your last 30 posts</h3><p>It measures your voice and finds the stories and numbers you already have.</p></div></li>
+          <li><span class="pipe-num">03</span><div><h3>You leave with 3 drafts in your voice</h3><p>Yours to keep and post, whether or not we work together.</p></div></li>
         </ol>
       </div>
     </section>
@@ -189,23 +375,27 @@
       </div>
     </section>
 
-    <section id="faq" class="section">
+    <section id="faq" class="section section-alt">
       <div class="container narrow">
+        <p class="eyebrow" data-reveal>FAQ</p>
         <h2 data-reveal>Questions</h2>
         <details><summary>Will it sound like AI?</summary><p>Every draft is scored against a voiceprint measured from your own posts and checked by linters that block common machine-written patterns. Then separate critics review it for voice before you see it.</p></details>
+        <details><summary>How is this different from a ghostwriter or ChatGPT?</summary><p>A ghostwriter guesses your voice and ChatGPT writes like everyone else. The agent starts from your real posts, uses only stories and numbers you can stand behind, and has to pass a panel of critics before a draft reaches you.</p></details>
+        <details><summary>How much of my time does it take?</summary><p>A short kickoff so we learn your goals and your no-go topics, then a few minutes a week to review and approve drafts.</p></details>
         <details><summary>Who approves each post?</summary><p>You do. Nothing is published without your approval, and every edit you make is recorded so the next draft needs fewer.</p></details>
+        <details><summary>How much does it cost?</summary><p>It depends on the platforms and how often you want to post. Pricing is agreed on the call, after the free audit.</p></details>
         <details><summary>Do you publish for me?</summary><p>That depends on how you like to work. Publishing, scheduling and cadence are agreed on the call.</p></details>
         <details><summary>What data do you use?</summary><p>Your public posts, your video transcripts, your website, and anything you share with us during onboarding. Every number in a draft traces back to one of those sources.</p></details>
         <details><summary>Is my data kept private?</summary><p>Your knowledge base is built for your account and used to write your content. How your data is stored and handled is agreed on the call.</p></details>
-        <details><summary>What platforms do you cover?</summary><p>LinkedIn, X and YouTube scripts, plus the visuals that go with them.</p></details>
       </div>
     </section>
 
     <section id="book" class="section cta-band">
       <div class="container narrow center">
         <h2 data-reveal>See your voice through the agent.</h2>
-        <p class="section-lede">Book a call and we'll walk you through how it would work for your account.</p>
-        <a class="btn btn-primary btn-lg" data-cta="book" href="#book">Book a call</a>
+        <p class="section-lede">Book a free 20-minute voice audit. You leave with 3 drafts in your voice.</p>
+        <a class="btn btn-primary btn-lg" data-cta="book" href="#book">Book my free voice audit</a>
+        <p class="microcopy">20 min · no pitch deck · 3 drafts you keep</p>
         <p class="contact" data-contact hidden>Or email <a data-contact-link href="#"></a></p>
       </div>
     </section>
@@ -213,10 +403,30 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <img src="assets/wordmark.svg" alt="ThoughtPilot" width="120" height="23">
+      <img src="assets/wordmark.svg" alt="ThoughtPilot" width="120" height="19">
       <p>&copy; <span id="year">2026</span> ThoughtPilot</p>
+      <p><a href="privacy.html">Privacy and cookies</a></p>
       <p data-contact hidden><a data-contact-link href="#"></a></p>
     </div>
   </footer>
+
+  <a class="sticky-cta" data-sticky-cta data-cta="book" href="#book">Book my free voice audit</a>
+
+  <section id="consent" class="consent" aria-label="Cookie consent" hidden>
+    <p>We use ad cookies to measure which ads bring visitors here. <a href="privacy.html">Privacy and cookies</a></p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-consent-decline>Decline</button>
+      <button type="button" class="btn btn-primary btn-sm" data-consent-accept>Accept</button>
+    </div>
+  </section>
+
+  <dialog id="booking-modal" class="booking" aria-label="Book your free voice audit">
+    <div class="booking-head">
+      <span>Book your free voice audit</span>
+      <button type="button" class="booking-close" data-booking-close aria-label="Close">&times;</button>
+    </div>
+    <div class="booking-frame" data-booking-frame></div>
+    <p class="booking-done" data-booking-done hidden>Booked. Check your inbox for the calendar invite.</p>
+  </dialog>
 </body>
 </html>

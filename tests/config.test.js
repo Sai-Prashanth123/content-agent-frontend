@@ -8,3 +8,9 @@ test("config exports owner-editable values with safe defaults", () => {
   assert.deepEqual(cfg.LOGOS, []);
   assert.deepEqual(cfg.TESTIMONIALS, []);
 });
+
+test("new ad settings default to safe, empty values", () => {
+  assert.equal(cfg.CONSENT_REQUIRED, true);
+  assert.deepEqual(cfg.RESULTS, []);
+  for (const v of Object.values(cfg.PIXELS)) assert.equal(v, "");
+});

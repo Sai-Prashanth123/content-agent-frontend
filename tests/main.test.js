@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { JSDOM } from "jsdom";
-import { safeUrl, wireBookingLinks, wireContact, renderProof, initTabs, initMotion, init } from "../main.js";
+import { safeUrl, wireBookingLinks, wireContact, renderProof, renderResults, initTabs, initMotion, init } from "../main.js";
 
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 function page({ reduced = false } = {}) {
@@ -128,4 +128,18 @@ test("typing a gate card keeps its height (no layout shift)", () => {
   for (const pre of document.querySelectorAll(".gate-lines")) Object.defineProperty(pre, "offsetHeight", { value: 128 });
   initMotion(document, window);
   for (const pre of document.querySelectorAll(".gate-lines")) assert.equal(pre.style.minHeight, "128px");
+});
+
+test("renderResults shows approved results as text and unhides the section", () => {
+  const { document } = page().window;
+  assert.equal(renderResults(document, []), false);
+  assert.ok(document.getElementById("results").hidden);
+  const ok = renderResults(document, [{ who: "<img src=x onerror=1>SaaS operator on X", before: "124", after: "615", metric: "median views per post", window: "10 weeks" }, null, 3]);
+  assert.equal(ok, true);
+  assert.equal(document.getElementById("results").hidden, false);
+  const cards = document.querySelectorAll("#results-list > *");
+  assert.equal(cards.length, 1);
+  assert.equal(document.querySelector("#results-list img"), null, "no markup injection");
+  assert.ok(document.getElementById("results-list").textContent.includes("<img src=x onerror=1>"));
+  assert.ok(document.getElementById("results-list").textContent.includes("615"));
 });

@@ -1,6 +1,11 @@
 // ThoughtPilot landing page behaviour. Every function takes the document/window
 // it works on so it can be tested in Node with jsdom.
 import * as config from "./config.js";
+import { initConsoleDemo } from "./console-demo.js";
+import { initCounters } from "./counters.js";
+import { initScrollPipeline } from "./scroll-pipeline.js";
+import { initBooking } from "./booking.js";
+import { createTracker, initConsentBanner } from "./tracking.js";
 
 const ALLOWED = /^(https?:|mailto:)/i;
 
@@ -151,6 +156,44 @@ export function initMotion(doc, win) {
   once([...doc.querySelectorAll(".gate-card")], (card) => typeLines(card, win), { threshold: 0.4 });
 }
 
+export function renderResults(doc, results = []) {
+  const section = doc.getElementById("results");
+  const list = doc.getElementById("results-list");
+  if (!section || !list) return false;
+  list.replaceChildren();
+  for (const item of results) {
+    if (!item || typeof item !== "object" || !item.who || !item.after) continue;
+    const card = doc.createElement("article");
+    card.className = "result-card";
+    const who = doc.createElement("p");
+    who.className = "label";
+    who.textContent = item.who;
+    const nums = doc.createElement("p");
+    nums.className = "result-nums";
+    if (item.before) {
+      const b = doc.createElement("span");
+      b.className = "result-before";
+      b.textContent = item.before;
+      nums.append(b, doc.createTextNode(" → "));
+    }
+    const a = doc.createElement("b");
+    a.textContent = item.after;
+    nums.append(a);
+    const metric = doc.createElement("p");
+    metric.textContent = [item.metric, item.window].filter(Boolean).join(" · ");
+    card.append(who, nums, metric);
+    list.append(card);
+  }
+  section.hidden = list.children.length === 0;
+  return !section.hidden;
+}
+
+function initStickyCta(doc, win) {
+  const hero = doc.getElementById("hero");
+  if (!hero || typeof win.IntersectionObserver !== "function") return;
+  new win.IntersectionObserver(([e]) => doc.body.classList.toggle("past-hero", !e.isIntersecting), { threshold: 0 }).observe(hero);
+}
+
 export function init(doc = document, win = window, cfg = config) {
   // Each step is isolated: a bad config entry must never stop the page
   // from revealing its content (the inline failsafe in index.html relies on
@@ -159,9 +202,19 @@ export function init(doc = document, win = window, cfg = config) {
   const steps = [
     () => initMotion(doc, win),
     () => wireBookingLinks(doc, cfg.BOOKING_URL),
+    () => {
+      const tracker = createTracker(doc, win, cfg);
+      initConsentBanner(doc, tracker);
+      initBooking(doc, win, cfg, tracker.track);
+    },
     () => wireContact(doc, cfg.CONTACT_EMAIL),
     () => renderProof(doc, cfg.LOGOS, cfg.TESTIMONIALS),
+    () => renderResults(doc, cfg.RESULTS),
     () => initTabs(doc.querySelector(".tabs")),
+    () => initConsoleDemo(doc.querySelector("[data-console-demo]"), win),
+    () => initCounters(doc, win),
+    () => initScrollPipeline(doc.querySelector("[data-scroll-pipeline]"), win),
+    () => initStickyCta(doc, win),
     () => {
       const year = doc.getElementById("year");
       if (year) year.textContent = String(new Date().getFullYear());

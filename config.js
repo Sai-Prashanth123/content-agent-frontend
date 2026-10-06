@@ -15,3 +15,21 @@ export const LOGOS = [];
 // Testimonials, only once approved. Plain text only; markup is not rendered.
 // Example: { quote: "...", name: "Jane Doe", role: "CEO, Acme" }
 export const TESTIMONIALS = [];
+
+// Ad pixels. Leave an ID empty and that pixel never loads. Pixels load only
+// after the visitor accepts the cookie banner (CONSENT_REQUIRED).
+export const PIXELS = {
+  meta: "",                 // Meta Pixel ID
+  linkedin: "",             // LinkedIn Insight Tag partner ID
+  linkedinConversionId: "", // LinkedIn conversion ID for "booked call"
+  google: "",               // GA4 measurement ID (G-...) or Google tag ID
+  googleAdsSendTo: "",      // Google Ads conversion "AW-.../label" for "booked call"
+  x: "",                    // X (Twitter) pixel ID
+  xEventId: "",             // X conversion event ID for "booked call"
+};
+export const CONSENT_REQUIRED = true;
+
+// Owner-approved anonymised results only. The Results section stays hidden
+// while this list is empty. Never put a client name here.
+// Example: { who: "SaaS operator on X", metric: "median views per post", before: "124", after: "615", window: "first 10 weeks" }
+export const RESULTS = [];

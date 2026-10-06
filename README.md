@@ -26,7 +26,9 @@ npm run copy         # copy-rule scan
 Import the repo in Vercel, framework preset "Other", no build command, output directory `.`. Add the custom domain in Vercel when ready.
 
 ## Before going live (checklist)
-1. `config.js`: set `BOOKING_URL` (https link) and `CONTACT_EMAIL`. Until then the final "Book a call" button has nowhere to go.
-2. `index.html` head: replace `https://REPLACE_ME/` in the canonical link with the real domain, make `og:image` absolute (`https://<domain>/assets/og-image.png`) and add `<meta property="og:url" content="https://<domain>/">`. LinkedIn and X previews need absolute URLs.
-3. Add approved client logos/testimonials to `config.js`, or leave both empty (the section stays hidden).
-4. Re-run `npm test`, `npm run validate`, `npm run copy`, then Lighthouse on the deployed URL.
+1. **Booking.** In `config.js`, set `BOOKING_URL` to your Calendly or Cal.com event link (https). "Book" buttons then open the scheduler inside the page, and utm_* tags from the ad are passed through.
+2. **Pixels.** In `config.js` `PIXELS`, add the IDs you use: Meta Pixel ID; LinkedIn partner ID plus the conversion ID for "booked call"; GA4/Google tag ID plus the Google Ads `send_to` for "booked call"; X pixel ID plus the X event ID. An empty ID loads nothing. Pixels load only after the visitor accepts the cookie banner.
+3. **Results.** Add only owner-approved, anonymised results to `RESULTS` (never a client name). The Results section stays hidden while it is empty.
+4. **Privacy page.** Have `privacy.html` reviewed for your business and jurisdiction, and set `CONTACT_EMAIL`.
+5. **Domain.** Replace `https://REPLACE_ME/` in the canonical link, make `og:image` absolute (`https://<domain>/assets/og-image.png`) and add `<meta property="og:url" content="https://<domain>/">`.
+6. **Verify.** `npm test`, `npm run validate`, `npm run copy`, then with `npm run serve` running: `npm run layout` and `npm run behavior`. Run Lighthouse on the deployed URL.

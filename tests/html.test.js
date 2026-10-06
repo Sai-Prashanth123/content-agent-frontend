@@ -10,7 +10,7 @@ const doc = new JSDOM(html).window.document;
 test("has exactly one h1 and the spec's section ids in order", () => {
   assert.equal(doc.querySelectorAll("h1").length, 1);
   const ids = [...doc.querySelectorAll("main > section")].map((s) => s.id);
-  assert.deepEqual(ids, ["hero", "problem", "how", "why", "outputs", "inside", "onboarding", "proof", "faq", "book"]);
+  assert.deepEqual(ids, ["hero", "proofbar", "problem", "compare", "how", "results", "outputs", "why", "audit", "proof", "faq", "book"]);
 });
 
 test("every Book a call CTA ships a working no-JS fallback", () => {
@@ -41,12 +41,12 @@ test("no external requests at all: no external scripts, styles or font hosts", (
   }
 });
 
-test("pipeline is a labelled segmented meter with five steps", () => {
-  const meter = doc.querySelector(".meter.pipeline-diagram");
-  assert.ok(meter);
-  assert.equal(meter.getAttribute("role"), "img");
-  assert.ok(meter.getAttribute("aria-label"));
-  assert.equal(meter.querySelectorAll(".seg.pipe-node").length, 5);
+test("how-it-works is a five-step scroll pipeline, each step with its own visual", () => {
+  const root = doc.querySelector("[data-scroll-pipeline]");
+  assert.ok(root);
+  const steps = root.querySelectorAll("[data-pipe-step]");
+  assert.equal(steps.length, 5);
+  for (const s of steps) assert.ok(s.querySelector("[data-pipe-visual]"));
 });
 
 test("six reasons render as a lattice of six cells", () => {
@@ -83,4 +83,53 @@ test("client blocklist is not hard-coded in the published scanner", () => {
 
 test("above-the-fold hero is never hidden by reveal animation (LCP)", () => {
   assert.equal(doc.querySelectorAll("#hero [data-reveal], #hero[data-reveal]").length, 0);
+});
+
+test("hero console ships its finished frame (complete without JavaScript)", async () => {
+  const { IDEA } = await import("../console-demo.js");
+  const c = doc.querySelector("[data-console-demo]");
+  assert.ok(c);
+  assert.equal(c.querySelector("[data-cd-idea]").textContent, IDEA);
+  assert.equal(c.querySelectorAll("[data-cd-step]").length, 5);
+  assert.equal(c.querySelectorAll("[data-cd-check].is-pass").length, 4);
+  const lines = c.querySelectorAll("[data-cd-line]");
+  assert.equal(lines.length, 6);
+  for (const l of lines) assert.ok(l.classList.contains("is-shown"));
+});
+
+test("booking modal, consent banner and sticky CTA are present and inert by default", () => {
+  const m = doc.getElementById("booking-modal");
+  assert.equal(m.tagName, "DIALOG");
+  assert.ok(m.querySelector("[data-booking-frame]"));
+  assert.ok(m.querySelector("[data-booking-close]"));
+  assert.ok(m.querySelector("[data-booking-done]").hasAttribute("hidden"));
+  assert.ok(doc.getElementById("consent").hasAttribute("hidden"));
+  const sticky = doc.querySelector("[data-sticky-cta]");
+  assert.equal(sticky.getAttribute("data-cta"), "book");
+});
+
+test("results section is hidden until approved results exist", () => {
+  assert.ok(doc.getElementById("results").hasAttribute("hidden"));
+});
+
+test("counters ship their final value in the HTML", () => {
+  const counters = [...doc.querySelectorAll("[data-count-to]")];
+  assert.ok(counters.length >= 3);
+  for (const el of counters) assert.ok(/\d/.test(el.textContent));
+});
+
+test("compare section shows both drafts side by side with marked differences", () => {
+  const sec = doc.getElementById("compare");
+  assert.ok(sec.querySelector(".ba-before") && sec.querySelector(".ba-after"));
+  assert.ok(sec.querySelectorAll(".ba-before mark.tell").length >= 3, "AI tells marked");
+  assert.ok(sec.querySelectorAll(".ba-after mark.real").length >= 2, "real-moment lines marked");
+  assert.equal(sec.querySelector(".ba-after").getAttribute("aria-hidden"), null, "both drafts readable by assistive tech");
+});
+
+test("footer links to the privacy and cookie policy", () => {
+  assert.ok(doc.querySelector('footer a[href="privacy.html"]'));
+});
+
+test("primary CTA names the free voice audit offer", () => {
+  assert.match(doc.querySelector("#hero [data-cta=book]").textContent, /free voice audit/i);
 });

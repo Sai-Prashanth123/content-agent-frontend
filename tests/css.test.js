@@ -60,9 +60,8 @@ test("reduced motion disables animation and shows content", () => {
   assert.match(block, /transition:\s*none/);
 });
 
-test("long mono lines cannot force page scroll", () => {
-  assert.match(css, /\.gate-lines\s*{[^}]*overflow-wrap:\s*anywhere/);
-  assert.match(css, /\.gate-lines\s*{[^}]*white-space:\s*pre-wrap/);
+test("long console text cannot force page scroll", () => {
+  assert.match(css, /\.console-body\s*{[^}]*overflow-wrap:\s*anywhere/);
 });
 
 test("container width and gutter per spec", () => {
@@ -74,9 +73,20 @@ test("gate lines are not block-level inside <pre> (avoids doubled line breaks)",
   assert.doesNotMatch(css, /\[data-gate-line\]\s*{[^}]*display:\s*block/);
 });
 
-test("pipeline is a segmented meter of discrete blocks", () => {
-  assert.match(css, /\.meter\s*{[^}]*grid-template-columns:\s*repeat\(5,/);
-  assert.match(css, /\.seg\.is-lit\s*{[^}]*background:\s*var\(--brand\)/);
+test("scroll pipeline dims inactive steps only when JS runs", () => {
+  assert.match(css, /\.js \.pipe-row:not\(\.is-active\)/);
+  assert.doesNotMatch(css, /(^|[^.\w-])\.pipe-row:not\(\.is-active\)\s*{[^}]*opacity:\s*0[;\s}]/m);
+});
+
+test("marquee and console animations stop under reduced motion", () => {
+  const block = css.split("@media (prefers-reduced-motion: reduce)")[1] || "";
+  assert.match(block, /\.marquee-track\s*{[^}]*animation:\s*none/);
+  assert.match(block, /\.caret\s*{[^}]*animation:\s*none/);
+});
+
+test("sticky mobile CTA appears only after the hero, and only on small screens", () => {
+  assert.match(css, /\.past-hero \.sticky-cta/);
+  assert.match(css, /@media \(min-width: 900px\)\s*{\s*\.sticky-cta\s*{\s*display:\s*none/);
 });
 
 test("six reasons use a shared-hairline lattice", () => {
@@ -91,4 +101,8 @@ test("FAQ summaries show an open/closed indicator", () => {
 
 test("tab buttons are hidden when JS is not running", () => {
   assert.match(css, /html:not\(\.js\) \[role="tablist"\]\s*{[^}]*display:\s*none/);
+});
+
+test("the hidden attribute always wins over component display rules", () => {
+  assert.match(css, /\[hidden\]\s*{\s*display:\s*none\s*!important/);
 });

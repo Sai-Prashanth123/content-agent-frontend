@@ -13,7 +13,14 @@
 > - **Signature elements:** the segmented meter for the pipeline and the shared-hairline lattice for the six reasons.
 > - **External requests:** the "Google Fonts only" rule in §4 is replaced by no external requests at all.
 
-## 1. Intent
+> **v3: paid-ad conversion page (2026-10-06, owner-approved).** The page was rebuilt for paid traffic from LinkedIn, Meta, Google Search and X.
+> - **Offer:** a free voice audit (3 drafts in your voice in 20 minutes).
+> - **Hero:** a live "agent at work" console.
+> - **New sections:** counters and a format marquee, a side-by-side generic-AI vs agent comparison, a scroll-driven five-step pipeline, results (hidden until approved), format mockups, the audit offer, and an expanded FAQ.
+> - **Conversion plumbing:** an in-page Calendly/Cal.com booking modal with UTM passthrough and a booking conversion; Meta, LinkedIn, Google and X pixels behind a consent banner; a privacy page; a sticky mobile CTA.
+> - **Unchanged:** the Console design system and house copy rules.
+> - **Deviation from plan:** the drag slider was replaced by side-by-side drafts with marked differences, because clipped text read badly.
+
 
 **Outcome.** A single public landing page that sells ThoughtPilot's done-for-you content service by showing what the content agent does and why it beats a human ghostwriter working with a ChatGPT tab.
 
