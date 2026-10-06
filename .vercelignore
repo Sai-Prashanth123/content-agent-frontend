@@ -1,0 +1,12 @@
+# Only the static site is deployed.
+node_modules
+tests
+scripts
+docs
+shots
+.lighthouse
+.superpowers
+assets/og.html
+package.json
+package-lock.json
+README.md
