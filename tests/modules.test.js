@@ -1,38 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { JSDOM } from "jsdom";
-import { STAGES, initialState, step, finalState } from "../console-demo.js";
 import { formatCount } from "../counters.js";
 import { stageIndexFor } from "../scroll-pipeline.js";
 import { buildBookingUrl, isScheduledEvent, bookingOrigin } from "../booking.js";
 import { createTracker } from "../tracking.js";
-
-// ---------- console demo (pure state machine)
-test("console demo walks every stage in order, then loops", () => {
-  let s = initialState();
-  const seen = [s.stage];
-  for (let i = 0; i < 400 && seen.length < STAGES.length + 1; i++) {
-    s = step(s);
-    if (s.stage !== seen[seen.length - 1]) seen.push(s.stage);
-  }
-  assert.deepEqual(seen.slice(0, STAGES.length), STAGES);
-  assert.equal(seen[STAGES.length], STAGES[0], "loops back to the first stage");
-});
-
-test("console demo final state shows the finished post with every check passed", () => {
-  const f = finalState();
-  assert.equal(f.stage, "done");
-  assert.equal(f.checksPassed, f.checksTotal);
-  assert.equal(f.postLines, f.postTotal);
-  assert.equal(f.score, 100);
-});
-
-test("console demo typing advances the idea one character at a time", () => {
-  const s0 = initialState();
-  const s1 = step(s0);
-  assert.equal(s1.stage, "idea");
-  assert.equal(s1.ideaChars, s0.ideaChars + 1);
-});
 
 // ---------- counters
 test("counters format with thousands separators, decimals and suffix", () => {

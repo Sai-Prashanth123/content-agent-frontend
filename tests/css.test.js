@@ -60,8 +60,14 @@ test("reduced motion disables animation and shows content", () => {
   assert.match(block, /transition:\s*none/);
 });
 
-test("long console text cannot force page scroll", () => {
-  assert.match(css, /\.console-body\s*{[^}]*overflow-wrap:\s*anywhere/);
+test("long post text in the hero stack cannot force page scroll", () => {
+  assert.match(css, /\.stack-card\s*{[^}]*overflow-wrap:\s*anywhere/);
+});
+
+test("hero stack floats gently, and stops under reduced motion", () => {
+  assert.match(css, /@keyframes float/);
+  const block = css.split("@media (prefers-reduced-motion: reduce)")[1] || "";
+  assert.match(block, /\.stack-card\s*{[^}]*animation:\s*none/);
 });
 
 test("container width and gutter per spec", () => {
@@ -81,7 +87,6 @@ test("scroll pipeline dims inactive steps only when JS runs", () => {
 test("marquee and console animations stop under reduced motion", () => {
   const block = css.split("@media (prefers-reduced-motion: reduce)")[1] || "";
   assert.match(block, /\.marquee-track\s*{[^}]*animation:\s*none/);
-  assert.match(block, /\.caret\s*{[^}]*animation:\s*none/);
 });
 
 test("sticky mobile CTA appears only after the hero, and only on small screens", () => {

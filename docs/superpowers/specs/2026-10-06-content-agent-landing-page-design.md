@@ -20,6 +20,7 @@
 > - **Conversion plumbing:** an in-page Calendly/Cal.com booking modal with UTM passthrough and a booking conversion; Meta, LinkedIn, Google and X pixels behind a consent banner; a privacy page; a sticky mobile CTA.
 > - **Unchanged:** the Console design system and house copy rules.
 > - **Deviation from plan:** the drag slider was replaced by side-by-side drafts with marked differences, because clipped text read badly.
+> - **Hero visual (owner request):** the animated console was replaced by a simple stack of three finished posts (LinkedIn, X, YouTube script).
 
 
 **Outcome.** A single public landing page that sells ThoughtPilot's done-for-you content service by showing what the content agent does and why it beats a human ghostwriter working with a ChatGPT tab.

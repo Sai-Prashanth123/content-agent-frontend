@@ -57,52 +57,28 @@
           </ul>
         </div>
 
-        <section class="console" data-console-demo data-stage="done" aria-label="Animated example of the agent turning an idea into a post">
-          <div class="console-bar">
-            <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="console-title">content-agent · live run</span>
-            <span class="console-stage" aria-hidden="true"></span>
-          </div>
-          <div class="console-body">
-            <p class="label">Idea</p>
-            <p class="cd-idea"><span data-cd-idea>Founders post tactics. Buyers remember the story behind them.</span><span class="caret" aria-hidden="true"></span></p>
-
-            <ol class="cd-steps">
-              <li data-cd-step class="is-lit">Learn</li>
-              <li data-cd-step class="is-lit">Codify</li>
-              <li data-cd-step class="is-lit">Write</li>
-              <li data-cd-step class="is-lit">Challenge</li>
-              <li data-cd-step class="is-lit">Ship</li>
-            </ol>
-
-            <ul class="cd-checks">
-              <li data-cd-check class="is-pass"><span>voice</span><b data-cd-state>PASS</b></li>
-              <li data-cd-check class="is-pass"><span>sources</span><b data-cd-state>PASS</b></li>
-              <li data-cd-check class="is-pass"><span>hook</span><b data-cd-state>PASS</b></li>
-              <li data-cd-check class="is-pass"><span>no repeat</span><b data-cd-state>PASS</b></li>
-            </ul>
-
-            <article class="cd-post">
-              <header class="cd-post-head">
-                <span class="avatar" aria-hidden="true">YN</span>
-                <span><b>Your Name</b><small>Founder · just now</small></span>
-              </header>
-              <p data-cd-line class="is-shown">Last quarter we lost a deal we should have won.</p>
-              <p data-cd-line class="is-shown">The buyer told us why: "We never got a feel for how you think."</p>
-              <p data-cd-line class="is-shown">We had posted all quarter. All tips. No stories.</p>
-              <p data-cd-line class="is-shown">So we changed one rule for every post:</p>
-              <p data-cd-line class="is-shown">Start with something that actually happened.</p>
-              <p data-cd-line class="is-shown">What's a moment from your week worth telling?</p>
-            </article>
-
-            <div class="cd-score">
-              <span class="label">Voice match</span>
-              <span class="cd-bar"><span data-cd-score></span></span>
-              <b data-cd-score-num>100</b>
-            </div>
-          </div>
-          <p class="illustrative">Illustrative example</p>
-        </section>
+        <div class="post-stack">
+          <article class="stack-card" data-kind="youtube">
+            <p class="stack-tag">YouTube script</p>
+            <p class="label">00:00 cold open</p>
+            <p>"In this video, I'll show you the three-step system we use to plan a month of content in one afternoon."</p>
+          </article>
+          <article class="stack-card" data-kind="x">
+            <p class="stack-tag">X post</p>
+            <div class="stack-head"><span class="avatar" aria-hidden="true">YN</span><span><b>Your Name</b><small>@you</small></span></div>
+            <p>We stopped writing "content".</p>
+            <p>We started writing down what customers asked us on calls.</p>
+          </article>
+          <article class="stack-card" data-kind="linkedin">
+            <p class="stack-tag">LinkedIn post</p>
+            <div class="stack-head"><span class="avatar" aria-hidden="true">YN</span><span><b>Your Name</b><small>Founder</small></span></div>
+            <p>Last quarter we lost a deal we should have won.</p>
+            <p>The buyer told us why: "We never got a feel for how you think."</p>
+            <p>So we changed one rule: every post starts with something that actually happened.</p>
+            <p class="stack-pass"><b>PASS</b> voice · <b>PASS</b> sources · <b>PASS</b> critics</p>
+          </article>
+          <p class="illustrative">Illustrative examples</p>
+        </div>
       </div>
     </section>
 

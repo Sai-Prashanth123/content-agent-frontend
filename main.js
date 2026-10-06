@@ -1,7 +1,6 @@
 // ThoughtPilot landing page behaviour. Every function takes the document/window
 // it works on so it can be tested in Node with jsdom.
 import * as config from "./config.js";
-import { initConsoleDemo } from "./console-demo.js";
 import { initCounters } from "./counters.js";
 import { initScrollPipeline } from "./scroll-pipeline.js";
 import { initBooking } from "./booking.js";
@@ -211,7 +210,6 @@ export function init(doc = document, win = window, cfg = config) {
     () => renderProof(doc, cfg.LOGOS, cfg.TESTIMONIALS),
     () => renderResults(doc, cfg.RESULTS),
     () => initTabs(doc.querySelector(".tabs")),
-    () => initConsoleDemo(doc.querySelector("[data-console-demo]"), win),
     () => initCounters(doc, win),
     () => initScrollPipeline(doc.querySelector("[data-scroll-pipeline]"), win),
     () => initStickyCta(doc, win),

@@ -85,16 +85,13 @@ test("above-the-fold hero is never hidden by reveal animation (LCP)", () => {
   assert.equal(doc.querySelectorAll("#hero [data-reveal], #hero[data-reveal]").length, 0);
 });
 
-test("hero console ships its finished frame (complete without JavaScript)", async () => {
-  const { IDEA } = await import("../console-demo.js");
-  const c = doc.querySelector("[data-console-demo]");
-  assert.ok(c);
-  assert.equal(c.querySelector("[data-cd-idea]").textContent, IDEA);
-  assert.equal(c.querySelectorAll("[data-cd-step]").length, 5);
-  assert.equal(c.querySelectorAll("[data-cd-check].is-pass").length, 4);
-  const lines = c.querySelectorAll("[data-cd-line]");
-  assert.equal(lines.length, 6);
-  for (const l of lines) assert.ok(l.classList.contains("is-shown"));
+test("hero shows a simple stack of three finished posts (no console demo)", () => {
+  assert.equal(doc.querySelector("[data-console-demo]"), null);
+  const cards = doc.querySelectorAll("#hero .post-stack .stack-card");
+  assert.equal(cards.length, 3);
+  const kinds = [...cards].map((c) => c.dataset.kind).sort();
+  assert.deepEqual(kinds, ["linkedin", "x", "youtube"]);
+  assert.ok(doc.querySelector("#hero .post-stack .illustrative"));
 });
 
 test("booking modal, consent banner and sticky CTA are present and inert by default", () => {
