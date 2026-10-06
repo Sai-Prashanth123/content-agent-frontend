@@ -10,3 +10,5 @@ assets/og.html
 package.json
 package-lock.json
 README.md
+.env*
+.vercel
